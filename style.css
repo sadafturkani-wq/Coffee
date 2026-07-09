@@ -1,0 +1,35 @@
+:root {
+  --dark-brown: #3e2723;
+  --coffee-brown: #5d4037;
+  --cream: #f5f5dc;
+  --beige: #efe6dd;
+  --gold: #c8a96a;
+  --gold-dark: #b08f4f;
+  --white: #ffffff;
+  --text-muted: #8d8377;
+  --shadow-sm: 0 4px 20px rgba(62, 39, 35, 0.08);
+  --shadow-md: 0 10px 40px rgba(62, 39, 35, 0.12);
+  --shadow-lg: 0 20px 60px rgba(62, 39, 35, 0.18);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Jost", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--dark-brown);
+  background: var(--white);
+  overflow-x: hidden;
+  font-weight: 400;
+  line-height: 1.7;
+}

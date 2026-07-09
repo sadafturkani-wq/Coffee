@@ -32,6 +32,148 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 <body>
-  
+  <!-- Nav -->
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-lg fixed-top navbar-dark py-3"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <i class="bi bi-cup-hot-fill brand-icon"></i>
+          <span class="brand-name">Brew &amp; Bean</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-gold btn-sm px-3" href="#menu">Order Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="home" class="hero">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade hero-carousel"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <div class="carousel-inner h-100">
+          <!-- Slide 1 -->
+          <div class="carousel-item active h-100">
+            <div
+              class="hero-slide d-flex align-items-center justify-content-center"
+              style="
+                background-image: linear-gradient(rgba(30, 18, 14, 0.55), rgba(30, 18, 14, 0.65)),
+                  url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920');
+              "
+            >
+              <div class="hero-content text-center">
+                <p class="hero-eyebrow animate-fade-down">Welcome to Brew &amp; Bean</p>
+                <h1 class="hero-title animate-fade-up">Freshly Brewed Coffee</h1>
+                <p class="hero-subtitle animate-fade-up-delay">
+                  Premium coffee beans from around the world, roasted to perfection.
+                </p>
+                <div class="hero-actions animate-fade-up-delay-2">
+                  <a href="#menu" class="btn btn-gold btn-lg me-2">Explore Menu</a>
+                  <a href="#contact" class="btn btn-outline-light btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item h-100">
+            <div
+              class="hero-slide d-flex align-items-center justify-content-center"
+              style="
+                background-image: linear-gradient(rgba(30, 18, 14, 0.55), rgba(30, 18, 14, 0.65)),
+                  url('https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=1920');
+              "
+            >
+              <div class="hero-content text-center">
+                <p class="hero-eyebrow animate-fade-down">Crafted With Passion</p>
+                <h1 class="hero-title animate-fade-up">Artisan Roasted Daily</h1>
+                <p class="hero-subtitle animate-fade-up-delay">
+                  Every cup tells a story of dedication and craft.
+                </p>
+                <div class="hero-actions animate-fade-up-delay-2">
+                  <a href="#menu" class="btn btn-gold btn-lg me-2">Explore Menu</a>
+                  <a href="#contact" class="btn btn-outline-light btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item h-100">
+            <div
+              class="hero-slide d-flex align-items-center justify-content-center"
+              style="
+                background-image: linear-gradient(rgba(30, 18, 14, 0.55), rgba(30, 18, 14, 0.65)),
+                  url('https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1920');
+              "
+            >
+              <div class="hero-content text-center">
+                <p class="hero-eyebrow animate-fade-down">A Cozy Escape</p>
+                <h1 class="hero-title animate-fade-up">Your Daily Ritual</h1>
+                <p class="hero-subtitle animate-fade-up-delay">
+                  A warm atmosphere where every sip feels like home.
+                </p>
+                <div class="hero-actions animate-fade-up-delay-2">
+                  <a href="#menu" class="btn btn-gold btn-lg me-2">Explore Menu</a>
+                  <a href="#contact" class="btn btn-outline-light btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators hero-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+      </div>
+      <!-- Scroll-down hint -->
+      <a href="#about" class="hero-scroll" aria-label="Scroll down">
+        <span class="hero-scroll-mouse"><span></span></span>
+      </a>
+    </header>
 </body>
 </html>
