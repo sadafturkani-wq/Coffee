@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
- <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -31,14 +31,243 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-<body>
+
+  <body>
+    <!-- ============================================================
+         NAVBAR
+         Transparent on top → white with shadow after scroll.
+         Uses Bootstrap Navbar component + scrollspy for active links.
+         ============================================================ -->
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-lg fixed-top navbar-dark py-3"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <i class="bi bi-cup-hot-fill brand-icon"></i>
+          <span class="brand-name">Brew &amp; Bean</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-gold btn-sm px-3" href="#menu">Order Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO — Bootstrap Carousel (auto-rotating, 5s, fade)
+         Full-screen height, dark overlay, animated text per slide.
+         ============================================================ -->
+    <header id="home" class="hero">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade hero-carousel"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <div class="carousel-inner h-100">
+          <!-- Slide 1 -->
+          <div class="carousel-item active h-100">
+            <div
+              class="hero-slide d-flex align-items-center justify-content-center"
+              style="
+                background-image: linear-gradient(rgba(30, 18, 14, 0.55), rgba(30, 18, 14, 0.65)),
+                  url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920');
+              "
+            >
+              <div class="hero-content text-center">
+                <p class="hero-eyebrow animate-fade-down">Welcome to Brew &amp; Bean</p>
+                <h1 class="hero-title animate-fade-up">Freshly Brewed Coffee</h1>
+                <p class="hero-subtitle animate-fade-up-delay">
+                  Premium coffee beans from around the world, roasted to perfection.
+                </p>
+                <div class="hero-actions animate-fade-up-delay-2">
+                  <a href="#menu" class="btn btn-gold btn-lg me-2">Explore Menu</a>
+                  <a href="#contact" class="btn btn-outline-light btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item h-100">
+            <div
+              class="hero-slide d-flex align-items-center justify-content-center"
+              style="
+                background-image: linear-gradient(rgba(30, 18, 14, 0.55), rgba(30, 18, 14, 0.65)),
+                  url('https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=1920');
+              "
+            >
+              <div class="hero-content text-center">
+                <p class="hero-eyebrow animate-fade-down">Crafted With Passion</p>
+                <h1 class="hero-title animate-fade-up">Artisan Roasted Daily</h1>
+                <p class="hero-subtitle animate-fade-up-delay">
+                  Every cup tells a story of dedication and craft.
+                </p>
+                <div class="hero-actions animate-fade-up-delay-2">
+                  <a href="#menu" class="btn btn-gold btn-lg me-2">Explore Menu</a>
+                  <a href="#contact" class="btn btn-outline-light btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item h-100">
+            <div
+              class="hero-slide d-flex align-items-center justify-content-center"
+              style="
+                background-image: linear-gradient(rgba(30, 18, 14, 0.55), rgba(30, 18, 14, 0.65)),
+                  url('https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1920');
+              "
+            >
+              <div class="hero-content text-center">
+                <p class="hero-eyebrow animate-fade-down">A Cozy Escape</p>
+                <h1 class="hero-title animate-fade-up">Your Daily Ritual</h1>
+                <p class="hero-subtitle animate-fade-up-delay">
+                  A warm atmosphere where every sip feels like home.
+                </p>
+                <div class="hero-actions animate-fade-up-delay-2">
+                  <a href="#menu" class="btn btn-gold btn-lg me-2">Explore Menu</a>
+                  <a href="#contact" class="btn btn-outline-light btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators hero-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+      </div>
+      <!-- Scroll-down hint -->
+      <a href="#about" class="hero-scroll" aria-label="Scroll down">
+        <span class="hero-scroll-mouse"><span></span></span>
+      </a>
+    </header>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         Image with badge + 3 feature cards.
+         ============================================================ -->
+    <section id="about" class="section section-about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Image column -->
+          <div class="col-lg-6 reveal reveal-right">
+            <div class="about-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Coffee being poured"
+                class="about-img-main"
+                loading="lazy"
+              />
+              <img
+                src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Coffee beans close up"
+                class="about-img-float"
+                loading="lazy"
+              />
+              <div class="about-badge">
+                <span class="about-badge-num">12+</span>
+                <span class="about-badge-text">Years of Roasting</span>
+              </div>
+            </div>
+          </div>
+          <!-- Text column -->
+          <div class="col-lg-6 reveal reveal-left">
+            <p class="section-eyebrow">Our Story</p>
+            <h2 class="section-title text-start">About Our Coffee</h2>
+            <p class="section-lead">
+              At Brew &amp; Bean, we believe coffee is more than a drink — it's an
+              experience. We source the finest beans from sustainable farms across
+              the globe and roast them in small batches to bring out their unique
+              character.
+            </p>
+            <p class="text-muted mb-4">
+              From the highlands of Ethiopia to the volcanic soils of Colombia, every
+              bean is selected with care and roasted with precision by our master
+              roasters.
+            </p>
+            <div class="row g-4">
+              <div class="col-md-4 reveal reveal-up">
+                <div class="feature-card text-center h-100">
+                  <div class="feature-icon"><i class="bi bi-award-fill"></i></div>
+                  <h5>Premium Beans</h5>
+                  <p>Sourced from the world's finest estates.</p>
+                </div>
+              </div>
+              <div class="col-md-4 reveal reveal-up" style="--reveal-delay: 0.15s">
+                <div class="feature-card text-center h-100">
+                  <div class="feature-icon"><i class="bi bi-fire"></i></div>
+                  <h5>Fresh Roasting</h5>
+                  <p>Roasted in small batches every morning.</p>
+                </div>
+              </div>
+              <div class="col-md-4 reveal reveal-up" style="--reveal-delay: 0.3s">
+                <div class="feature-card text-center h-100">
+                  <div class="feature-icon"><i class="bi bi-flower1"></i></div>
+                  <h5>Organic Coffee</h5>
+                  <p>100% organic and ethically sourced.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MENU SECTION
+         6 coffee cards with image, price, description, order button.
+         Featured badge on the Latte card.
+         ============================================================ -->
+    <section id="menu" class="section section-menu">
       <div class="container">
         <div class="text-center mb-5 reveal reveal-up">
           <p class="section-eyebrow">Our Selection</p>
           <h2 class="section-title">Coffee Menu</h2>
           <p class="section-lead mx-auto" style="max-width: 600px">
-            Explore our carefully crafted menu, each cup prepared with precision
-            and love by our expert baristas.
+            Explore our carefully crafted menu, each cup prepared with precision and
+            love by our expert baristas.
           </p>
         </div>
         <div class="row g-4">
@@ -57,18 +286,13 @@
                   <h5>Espresso</h5>
                   <span class="menu-price">$3.50</span>
                 </div>
-                <p>
-                  A bold, concentrated shot of pure coffee with a rich crema.
-                </p>
+                <p>A bold, concentrated shot of pure coffee with a rich crema.</p>
                 <button class="btn btn-gold w-100">Order Now</button>
               </div>
             </div>
           </div>
           <!-- Cappuccino -->
-          <div
-            class="col-md-6 col-lg-4 reveal reveal-up"
-            style="--reveal-delay: 0.15s"
-          >
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.15s">
             <div class="menu-card">
               <div class="menu-card-img">
                 <img
@@ -88,10 +312,7 @@
             </div>
           </div>
           <!-- Latte (featured) -->
-          <div
-            class="col-md-6 col-lg-4 reveal reveal-up"
-            style="--reveal-delay: 0.3s"
-          >
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.3s">
             <div class="menu-card menu-card-featured">
               <span class="menu-badge">Featured</span>
               <div class="menu-card-img">
@@ -132,10 +353,7 @@
             </div>
           </div>
           <!-- Cold Brew -->
-          <div
-            class="col-md-6 col-lg-4 reveal reveal-up"
-            style="--reveal-delay: 0.15s"
-          >
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.15s">
             <div class="menu-card">
               <div class="menu-card-img">
                 <img
@@ -149,18 +367,13 @@
                   <h5>Cold Brew</h5>
                   <span class="menu-price">$4.75</span>
                 </div>
-                <p>
-                  Slow-steeped for 18 hours for a smooth, low-acidity taste.
-                </p>
+                <p>Slow-steeped for 18 hours for a smooth, low-acidity taste.</p>
                 <button class="btn btn-gold w-100">Order Now</button>
               </div>
             </div>
           </div>
           <!-- Flat White -->
-          <div
-            class="col-md-6 col-lg-4 reveal reveal-up"
-            style="--reveal-delay: 0.3s"
-          >
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.3s">
             <div class="menu-card">
               <div class="menu-card-img">
                 <img
@@ -183,106 +396,625 @@
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section section-about">
+    <!-- ============================================================
+         PRICING SECTION
+         3 subscription tiers with a highlighted "Most Popular" card.
+         ============================================================ -->
+    <section id="pricing" class="section section-pricing">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <!-- Image column -->
-          <div class="col-lg-6 reveal reveal-right">
-            <div class="about-img-wrap">
-              <img
-                src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="Coffee being poured"
-                class="about-img-main"
-                loading="lazy"
-              />
-              <img
-                src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Coffee beans close up"
-                class="about-img-float"
-                loading="lazy"
-              />
-              <div class="about-badge">
-                <span class="about-badge-num">12+</span>
-                <span class="about-badge-text">Years of Roasting</span>
-              </div>
-            </div>
-          </div>
-          <!-- Text column -->
-          <div class="col-lg-6 reveal reveal-left">
-            <p class="section-eyebrow">Our Story</p>
-            <h2 class="section-title text-start">About Our Coffee</h2>
-            <p class="section-lead">
-              At Brew &amp; Bean, we believe coffee is more than a drink — it's
-              an experience. We source the finest beans from sustainable farms
-              across the globe and roast them in small batches to bring out
-              their unique character.
-            </p>
-            <p class="text-muted mb-4">
-              From the highlands of Ethiopia to the volcanic soils of Colombia,
-              every bean is selected with care and roasted with precision by our
-              master roasters.
-            </p>
-            <div class="row g-4">
-              <div class="col-md-4 reveal reveal-up">
-                <div class="feature-card text-center h-100">
-                  <div class="feature-icon">
-                    <i class="bi bi-award-fill"></i>
-                  </div>
-                  <h5>Premium Beans</h5>
-                  <p>Sourced from the world's finest estates.</p>
-                </div>
-              </div>
-              <div
-                class="col-md-4 reveal reveal-up"
-                style="--reveal-delay: 0.15s"
-              >
-                <div class="feature-card text-center h-100">
-                  <div class="feature-icon"><i class="bi bi-fire"></i></div>
-                  <h5>Fresh Roasting</h5>
-                  <p>Roasted in small batches every morning.</p>
-                </div>
-              </div>
-              <div
-                class="col-md-4 reveal reveal-up"
-                style="--reveal-delay: 0.3s"
-              >
-                <div class="feature-card text-center h-100">
-                  <div class="feature-icon"><i class="bi bi-flower1"></i></div>
-                  <h5>Organic Coffee</h5>
-                  <p>100% organic and ethically sourced.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="text-center mb-5 reveal reveal-up">
+          <p class="section-eyebrow">Subscription Plans</p>
+          <h2 class="section-title">Coffee Pricing</h2>
+          <p class="section-lead mx-auto" style="max-width: 600px">
+            Choose a plan that fits your daily ritual. Cancel anytime, no commitment.
+          </p>
         </div>
-        <!-- Carousel indicators -->
-        <div class="carousel-indicators hero-indicators">
-          <button
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide-to="0"
-            class="active"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+        <div class="row g-4 justify-content-center">
+          <!-- Starter -->
+          <div class="col-md-6 col-lg-4 reveal reveal-right">
+            <div class="price-card h-100">
+              <h5 class="price-name">Starter</h5>
+              <div class="price-amount">
+                <span class="price-currency">$</span>19<span class="price-period">/mo</span>
+              </div>
+              <ul class="price-features">
+                <li><i class="bi bi-check-circle-fill"></i> 10 cups per month</li>
+                <li><i class="bi bi-check-circle-fill"></i> Single origin beans</li>
+                <li><i class="bi bi-check-circle-fill"></i> Standard shipping</li>
+                <li class="muted"><i class="bi bi-x-circle"></i> Free refills</li>
+                <li class="muted"><i class="bi bi-x-circle"></i> Priority support</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline-gold w-100">Choose Plan</a>
+            </div>
+          </div>
+          <!-- Barista (featured) -->
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.15s">
+            <div class="price-card price-card-featured h-100">
+              <span class="price-tag">Most Popular</span>
+              <h5 class="price-name">Barista</h5>
+              <div class="price-amount">
+                <span class="price-currency">$</span>39<span class="price-period">/mo</span>
+              </div>
+              <ul class="price-features">
+                <li><i class="bi bi-check-circle-fill"></i> 30 cups per month</li>
+                <li><i class="bi bi-check-circle-fill"></i> Premium blend beans</li>
+                <li><i class="bi bi-check-circle-fill"></i> Free express shipping</li>
+                <li><i class="bi bi-check-circle-fill"></i> 2 free refills monthly</li>
+                <li><i class="bi bi-check-circle-fill"></i> Priority support</li>
+              </ul>
+              <a href="#contact" class="btn btn-gold w-100">Choose Plan</a>
+            </div>
+          </div>
+          <!-- Connoisseur -->
+          <div class="col-md-6 col-lg-4 reveal reveal-left" style="--reveal-delay: 0.3s">
+            <div class="price-card h-100">
+              <h5 class="price-name">Connoisseur</h5>
+              <div class="price-amount">
+                <span class="price-currency">$</span>69<span class="price-period">/mo</span>
+              </div>
+              <ul class="price-features">
+                <li><i class="bi bi-check-circle-fill"></i> Unlimited cups</li>
+                <li><i class="bi bi-check-circle-fill"></i> Reserve single estate</li>
+                <li><i class="bi bi-check-circle-fill"></i> Free express shipping</li>
+                <li><i class="bi bi-check-circle-fill"></i> Unlimited refills</li>
+                <li><i class="bi bi-check-circle-fill"></i> Private tasting events</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline-gold w-100">Choose Plan</a>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Scroll-down hint -->
-      <a href="#about" class="hero-scroll" aria-label="Scroll down">
-        <span class="hero-scroll-mouse"><span></span></span>
-      </a>
-    </header>
-</body>
+    </section>
+
+    <!-- ============================================================
+         WHY CHOOSE US
+         6 icon cards with hover effects.
+         ============================================================ -->
+    <section id="why" class="section section-why">
+      <div class="container">
+        <div class="text-center mb-5 reveal reveal-up">
+          <p class="section-eyebrow">The Brew &amp; Bean Difference</p>
+          <h2 class="section-title">Why Choose Us</h2>
+          <p class="section-lead mx-auto" style="max-width: 600px">
+            We obsess over every detail so that your cup is always perfect.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-4 reveal reveal-up">
+            <div class="why-card text-center h-100">
+              <div class="why-icon"><i class="bi bi-cup-straw"></i></div>
+              <h5>Fresh Coffee Daily</h5>
+              <p>Beans roasted every morning for peak flavor.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.1s">
+            <div class="why-card text-center h-100">
+              <div class="why-icon"><i class="bi bi-flower1"></i></div>
+              <h5>Organic Beans</h5>
+              <p>100% organic, pesticide-free, ethically grown.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.2s">
+            <div class="why-card text-center h-100">
+              <div class="why-icon"><i class="bi bi-person-badge-fill"></i></div>
+              <h5>Professional Baristas</h5>
+              <p>Award-winning baristas craft every cup.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 reveal reveal-up">
+            <div class="why-card text-center h-100">
+              <div class="why-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+              <h5>Fast Service</h5>
+              <p>Quick, friendly service without the wait.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.1s">
+            <div class="why-card text-center h-100">
+              <div class="why-icon"><i class="bi bi-house-heart-fill"></i></div>
+              <h5>Comfortable Environment</h5>
+              <p>A cozy space to relax, work, or meet friends.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.2s">
+            <div class="why-card text-center h-100">
+              <div class="why-icon"><i class="bi bi-wifi"></i></div>
+              <h5>Free WiFi</h5>
+              <p>High-speed internet for all our guests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+         6 service cards with hover effects.
+         ============================================================ -->
+    <section id="services" class="section section-services">
+      <div class="container">
+        <div class="text-center mb-5 reveal reveal-up">
+          <p class="section-eyebrow">What We Offer</p>
+          <h2 class="section-title">Coffee Services</h2>
+          <p class="section-lead mx-auto" style="max-width: 600px">
+            Beyond the cup — we bring coffee into every part of your day.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal reveal-right">
+            <div class="service-card h-100">
+              <div class="service-icon"><i class="bi bi-cup-hot-fill"></i></div>
+              <h5>Coffee Brewing</h5>
+              <p>Master the art of brewing with our expert guidance and premium equipment.</p>
+              <a href="#contact" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.15s">
+            <div class="service-card h-100">
+              <div class="service-icon"><i class="bi bi-bag-fill"></i></div>
+              <h5>Takeaway</h5>
+              <p>Grab your favorite brew on the go with our convenient takeaway service.</p>
+              <a href="#contact" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-left" style="--reveal-delay: 0.3s">
+            <div class="service-card h-100">
+              <div class="service-icon"><i class="bi bi-box-seam-fill"></i></div>
+              <h5>Coffee Subscription</h5>
+              <p>Fresh beans delivered to your door every week or month. Cancel anytime.</p>
+              <a href="#contact" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-right">
+            <div class="service-card h-100">
+              <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+              <h5>Private Events</h5>
+              <p>Host your gatherings in our elegant cafe with bespoke coffee catering.</p>
+              <a href="#contact" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.15s">
+            <div class="service-card h-100">
+              <div class="service-icon"><i class="bi bi-easel-fill"></i></div>
+              <h5>Coffee Workshops</h5>
+              <p>Learn from our baristas in hands-on brewing and latte art workshops.</p>
+              <a href="#contact" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-left" style="--reveal-delay: 0.3s">
+            <div class="service-card h-100">
+              <div class="service-icon"><i class="bi bi-laptop"></i></div>
+              <h5>Online Ordering</h5>
+              <p>Order ahead from your phone and skip the line. Pickup or delivery.</p>
+              <a href="#contact" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS
+         Bootstrap Carousel with auto-sliding, round photos, 5 stars.
+         ============================================================ -->
+    <section id="testimonials" class="section section-testimonials">
+      <div class="container">
+        <div class="text-center mb-5 reveal reveal-up">
+          <p class="section-eyebrow">Loved By Thousands</p>
+          <h2 class="section-title text-light">What Our Customers Say</h2>
+        </div>
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
+        >
+          <div class="carousel-inner">
+            <!-- Testimonial 1 -->
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="testimonial-card text-center">
+                    <div class="testimonial-stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">
+                      "The best coffee I've ever had. The atmosphere is warm and inviting,
+                      and the baristas truly care about every cup. Brew &amp; Bean is my
+                      daily ritual now."
+                    </p>
+                    <div class="testimonial-author">
+                      <img
+                        src="https://images.pexels.com/photos/220458/pexels-photo-220458.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        alt="Sarah Mitchell"
+                        loading="lazy"
+                      />
+                      <div>
+                        <h6>Sarah Mitchell</h6>
+                        <span>Regular Customer</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="testimonial-card text-center">
+                    <div class="testimonial-stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">
+                      "Their cold brew is unmatched. Smooth, rich, and perfectly balanced.
+                      The subscription service means I never run out of my favorite beans."
+                    </p>
+                    <div class="testimonial-author">
+                      <img
+                        src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        alt="James Carter"
+                        loading="lazy"
+                      />
+                      <div>
+                        <h6>James Carter</h6>
+                        <span>Subscriber</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="testimonial-card text-center">
+                    <div class="testimonial-stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">
+                      "I attended a latte art workshop here and it was incredible. The
+                      staff is knowledgeable, patient, and passionate. I can now make my
+                      own rosetta!"
+                    </p>
+                    <div class="testimonial-author">
+                      <img
+                        src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        alt="Emily Rodriguez"
+                        loading="lazy"
+                      />
+                      <div>
+                        <h6>Emily Rodriguez</h6>
+                        <span>Workshop Attendee</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Indicators -->
+          <div class="carousel-indicators testimonial-indicators">
+            <button
+              type="button"
+              data-bs-target="#testimonialCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY
+         Grid gallery with hover zoom + CSS lightbox (checkbox hack).
+         ============================================================ -->
+    <section id="gallery" class="section section-gallery">
+      <div class="container">
+        <div class="text-center mb-5 reveal reveal-up">
+          <p class="section-eyebrow">Moments In Every Cup</p>
+          <h2 class="section-title">Coffee Gallery</h2>
+          <p class="section-lead mx-auto" style="max-width: 600px">
+            A glimpse into our world of coffee — from bean to beautiful cup.
+          </p>
+        </div>
+        <div class="row g-3 gallery-grid">
+          <div class="col-md-6 col-lg-4 reveal reveal-up">
+            <label for="lightbox-toggle-1" class="gallery-item">
+              <img
+                src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Latte art"
+                loading="lazy"
+              />
+              <span class="gallery-overlay"><i class="bi bi-zoom-in"></i></span>
+            </label>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.1s">
+            <label for="lightbox-toggle-2" class="gallery-item">
+              <img
+                src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Coffee beans"
+                loading="lazy"
+              />
+              <span class="gallery-overlay"><i class="bi bi-zoom-in"></i></span>
+            </label>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.2s">
+            <label for="lightbox-toggle-3" class="gallery-item">
+              <img
+                src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Cafe interior"
+                loading="lazy"
+              />
+              <span class="gallery-overlay"><i class="bi bi-zoom-in"></i></span>
+            </label>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-up">
+            <label for="lightbox-toggle-4" class="gallery-item">
+              <img
+                src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Coffee pour"
+                loading="lazy"
+              />
+              <span class="gallery-overlay"><i class="bi bi-zoom-in"></i></span>
+            </label>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.1s">
+            <label for="lightbox-toggle-5" class="gallery-item">
+              <img
+                src="https://images.pexels.com/photos/2061586/pexels-photo-2061586.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Mocha dessert"
+                loading="lazy"
+              />
+              <span class="gallery-overlay"><i class="bi bi-zoom-in"></i></span>
+            </label>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-up" style="--reveal-delay: 0.2s">
+            <label for="lightbox-toggle-6" class="gallery-item">
+              <img
+                src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Coffee cups"
+                loading="lazy"
+              />
+              <span class="gallery-overlay"><i class="bi bi-zoom-in"></i></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CSS LIGHTBOX (checkbox hack — no JavaScript needed)
+         Hidden checkboxes toggle the lightbox open/closed.
+         ============================================================ -->
+    <input type="checkbox" id="lightbox-toggle-1" class="lightbox-toggle" />
+    <input type="checkbox" id="lightbox-toggle-2" class="lightbox-toggle" />
+    <input type="checkbox" id="lightbox-toggle-3" class="lightbox-toggle" />
+    <input type="checkbox" id="lightbox-toggle-4" class="lightbox-toggle" />
+    <input type="checkbox" id="lightbox-toggle-5" class="lightbox-toggle" />
+    <input type="checkbox" id="lightbox-toggle-6" class="lightbox-toggle" />
+
+    <div class="lightbox">
+      <label for="lightbox-toggle-1" class="lightbox-panel">
+        <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Latte art" />
+        <span class="lightbox-close">&times;</span>
+      </label>
+      <label for="lightbox-toggle-2" class="lightbox-panel">
+        <img src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Coffee beans" />
+        <span class="lightbox-close">&times;</span>
+      </label>
+      <label for="lightbox-toggle-3" class="lightbox-panel">
+        <img src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cafe interior" />
+        <span class="lightbox-close">&times;</span>
+      </label>
+      <label for="lightbox-toggle-4" class="lightbox-panel">
+        <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Coffee pour" />
+        <span class="lightbox-close">&times;</span>
+      </label>
+      <label for="lightbox-toggle-5" class="lightbox-panel">
+        <img src="https://images.pexels.com/photos/2061586/pexels-photo-2061586.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mocha dessert" />
+        <span class="lightbox-close">&times;</span>
+      </label>
+      <label for="lightbox-toggle-6" class="lightbox-panel">
+        <img src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Coffee cups" />
+        <span class="lightbox-close">&times;</span>
+      </label>
+    </div>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         Background image + overlay, contact form, map, info.
+         ============================================================ -->
+    <section id="contact" class="section section-contact">
+      <div class="container position-relative">
+        <div class="text-center mb-5 reveal reveal-up">
+          <p class="section-eyebrow text-gold">Get In Touch</p>
+          <h2 class="section-title text-light">Visit Our Cafe</h2>
+          <p class="section-lead text-light-opacity mx-auto" style="max-width: 600px">
+            We'd love to hear from you. Drop by, call, or send us a message.
+          </p>
+        </div>
+        <div class="row g-4">
+          <!-- Info column -->
+          <div class="col-lg-5 reveal reveal-right">
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                  <h6>Address</h6>
+                  <p>128 Maple Street, Portland, OR 97201</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+                <div>
+                  <h6>Phone</h6>
+                  <p><a href="tel:+15035550199">+1 (503) 555-0199</a></p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+                <div>
+                  <h6>Email</h6>
+                  <p><a href="mailto:hello@brewandbean.co">hello@brewandbean.co</a></p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
+                <div>
+                  <h6>Opening Hours</h6>
+                  <p>Mon – Fri: 7am – 8pm<br />Sat – Sun: 8am – 9pm</p>
+                </div>
+              </div>
+            </div>
+            <!-- Map placeholder -->
+            <div class="contact-map mt-4">
+              <iframe
+                title="Cafe location"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-122.69%2C45.51%2C-122.66%2C45.53&layer=mapnik"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <!-- Form column -->
+          <div class="col-lg-7 reveal reveal-left">
+            <form class="contact-form" onsubmit="return false;">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="cName" placeholder="Your Name" required />
+                    <label for="cName">Your Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="cEmail" placeholder="Your Email" required />
+                    <label for="cEmail">Your Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="cSubject" placeholder="Subject" />
+                    <label for="cSubject">Subject</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      id="cMessage"
+                      placeholder="Message"
+                      style="height: 140px"
+                      required
+                    ></textarea>
+                    <label for="cMessage">Your Message</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-gold btn-lg w-100">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         Dark footer with brand, quick links, services, newsletter,
+         social icons, copyright.
+         ============================================================ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4 py-5">
+          <div class="col-lg-4 col-md-6">
+            <a class="footer-brand d-flex align-items-center gap-2 mb-3" href="#home">
+              <i class="bi bi-cup-hot-fill"></i>
+              <span>Brew &amp; Bean</span>
+            </a>
+            <p class="footer-desc">
+              Premium coffee beans from around the world, freshly roasted and brewed
+              with passion since 2012.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-6">
+            <h6 class="footer-title">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-6">
+            <h6 class="footer-title">Services</h6>
+            <ul class="footer-links">
+              <li><a href="#services">Coffee Brewing</a></li>
+              <li><a href="#services">Takeaway</a></li>
+              <li><a href="#services">Subscription</a></li>
+              <li><a href="#services">Private Events</a></li>
+              <li><a href="#services">Workshops</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="footer-title">Newsletter</h6>
+            <p class="footer-desc">Subscribe for brewing tips and exclusive offers.</p>
+            <form class="footer-newsletter" onsubmit="return false;">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit" aria-label="Subscribe">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div
+          class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"
+        >
+          <p class="mb-0">&copy; 2024 Brew &amp; Bean. All rights reserved.</p>
+          <p class="mb-0">
+            Crafted with <i class="bi bi-heart-fill text-gold"></i> for coffee lovers
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+         BACK TO TOP — CSS-only (anchor link to #home)
+         ============================================================ -->
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- ============================================================
+         BOOTSTRAP 5 JS BUNDLE (CDN)
+         Required for Carousel, Navbar collapse, Scrollspy.
+         This is the ONLY JavaScript — it is the Bootstrap bundle.
+         ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
